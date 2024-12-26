@@ -3,7 +3,7 @@
 import { Poppins } from "next/font/google";
 import { motion } from "motion/react";
 
-const poppins = Poppins({ weight: ["200", "400", "700"] });
+const poppins = Poppins({ weight: ["200", "400", "700"], preload: false });
 
 export default function Home() {
   return (
