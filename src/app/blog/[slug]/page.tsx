@@ -3,7 +3,7 @@
 import { use } from 'react';
 import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock, Share2, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Github, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 
 // Mock blog posts data - in a real app, this would come from a CMS or file system

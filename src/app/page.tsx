@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { ArrowDown, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -28,8 +28,8 @@ export default function Home() {
                 <span className="text-primary-400">Barcelona, Spain</span>
               </h2>
               <p className="text-lg text-dark-300 leading-relaxed mb-8">
-               Hey! 👋🏻 It's Carlo, and this is my personal space for everything I need as a developer, creative, but mainly just as a person.
-               It's like journaling, but publicly catered to be read by you, my invisible audience. So welcome, and i'm glad you're here!
+               Hey! 👋🏻 It&apos;s Carlo, and this is my personal space for everything I need as a developer, creative, but mainly just as a person.
+               It&apos;s like journaling, but publicly catered to be read by you, my invisible audience. So welcome, and i&apos;m glad you&apos;re here!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <motion.a
