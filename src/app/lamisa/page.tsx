@@ -102,9 +102,9 @@ export default function LamisaMenu() {
             </p>
             <div className="max-w-2xl mx-auto mb-6">
               <p className="text-amber-300/80 text-base leading-relaxed" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                <span className="font-semibold text-amber-200">Lamisa</span> — meaning "table" in Cebuano, 
+                <span className="font-semibold text-amber-200">Lamisa</span> — meaning &quot;table&quot; in Cebuano, 
                 where we gather to share food and stories. Also a playful question: 
-                <span className="italic"> "Lami, sa?"</span> — "Delicious, right?"
+                <span className="italic"> &quot;Lami, sa?&quot;</span> — &quot;Delicious, right?&quot;
               </p>
             </div>
             <div className="flex items-center justify-center gap-4 text-amber-300">
