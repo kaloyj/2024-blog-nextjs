@@ -372,6 +372,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-dark-950">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Featured Projects</h2>
+            <div className="w-24 h-1 bg-primary-500 mx-auto"></div>
+          </motion.div>
+
+          <div className="max-w-2xl mx-auto">
+            {[
+              {
+                title: "Lamisa - Filipino Brunch Menu",
+                description: "My dream Filipino brunch restaurant bringing traditional flavors to Barcelona. A passion project combining my love for Filipino cuisine, modern design, and creating spaces where people gather around the table to share food and stories.",
+                tech: ["Next.js", "Tailwind CSS", "Framer Motion", "UI/UX Design"],
+                link: "/lamisa",
+                isInternal: true
+              }
+            ].map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-dark-800 rounded-xl overflow-hidden border border-dark-700 hover:border-primary-500 transition-colors group"
+              >
+                <div className="h-48 bg-gradient-to-br from-primary-600 to-primary-800"></div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-dark-300 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <span key={tech} className="bg-primary-900 text-primary-300 px-3 py-1 rounded-full text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    {project.isInternal ? (
+                      <Link 
+                        href={project.link}
+                        className="flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors font-semibold"
+                      >
+                        <ExternalLink size={16} />
+                        View Project
+                      </Link>
+                    ) : (
+                      <a 
+                        href={project.link} 
+                        className="flex items-center gap-2 text-dark-300 hover:text-white transition-colors"
+                      >
+                        <ExternalLink size={16} />
+                        Coming Soon
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Blog Preview Section */}
       <section className="py-20 bg-dark-950">
         <div className="max-w-6xl mx-auto px-6">
