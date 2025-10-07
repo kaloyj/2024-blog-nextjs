@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "the-beginning-of-a-dream",
     title: "The Beginning of a Dream",
-    excerpt: "How at 27, the resurgence of simply having dreams, and the idea of pursuing it is taking shape.",
+    excerpt: "How at 27, the resurgence of simply having dreams, and the idea of pursuing it is shaping up to reality.",
     date: "2025-10-07",
     readTime: "9 min read",
     category: "Life",
