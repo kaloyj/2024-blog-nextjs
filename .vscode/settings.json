@@ -1,0 +1,21 @@
+{
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.rulers": [80, 120],
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.mdx": "mdx"
+  }
+}
+
