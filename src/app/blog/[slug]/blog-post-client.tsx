@@ -128,9 +128,9 @@ export default function BlogPostClient({ post, content, allPosts }: BlogPostClie
                     return '<hr />';
                   }
                   if (line.trim() === '') {
-                    return '<br />';
+                    return '';
                   }
-                  return `<p style="line-height: 1.8;">${line}</p>`;
+                  return `<p style="line-height: 1.7; margin-bottom: 1rem;">${line}</p>`;
                 })
                 .join('')
             }} 
