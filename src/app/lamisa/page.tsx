@@ -252,6 +252,81 @@ export default function LamisaMenu() {
         </motion.div>
       </main>
 
+      {/* Featured Concepts Section */}
+      <section className="py-20 bg-gradient-to-b from-amber-950/50 to-orange-950/70">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-5xl md:text-6xl font-black text-amber-200 mb-3 tracking-tight uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.01em' }}>
+              Concepts
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-amber-300/80 text-lg max-w-2xl mx-auto" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              Experimental menus exploring different themes, cuisines, and stories
+            </p>
+          </motion.div>
+
+          <div className="grid gap-8">
+            <motion.article
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-amber-900/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-amber-800/40 hover:border-amber-600/60 transition-all duration-300 group"
+            >
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="bg-amber-800/50 text-amber-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    CONCEPT 000
+                  </span>
+                  <span className="bg-orange-800/50 text-orange-200 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    Latest
+                  </span>
+                </div>
+                
+                <h3 className="text-4xl font-black text-amber-100 mb-4 group-hover:text-amber-200 transition-colors tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  Heritage
+                </h3>
+                
+                <p className="text-amber-200/70 text-base mb-3 italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  Filipino / Chinese influence
+                </p>
+                
+                <p className="text-amber-200/80 leading-relaxed mb-6" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  Merging Filipino flavours to Chinese staples, Filipino street style, but home edition. A journey through memory and flavor, where each dish tells a personal story.
+                </p>
+                
+                <Link 
+                  href="/lamisa/000"
+                  className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-amber-950 px-6 py-3 rounded-full font-bold transition-colors group-hover:gap-3 duration-300"
+                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+                >
+                  Explore Concept
+                  <ArrowLeft size={18} className="rotate-180 transition-transform" />
+                </Link>
+              </div>
+            </motion.article>
+          </div>
+
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <p className="text-amber-300/60 text-sm italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              More concepts coming soon...
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Decorative Footer */}
       <footer className="py-16 text-center bg-amber-950/50">
         <div className="max-w-4xl mx-auto px-6">
