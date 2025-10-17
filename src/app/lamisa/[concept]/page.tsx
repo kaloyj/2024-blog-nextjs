@@ -26,11 +26,20 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
       title: `${concept.title} - Concept ${concept.id} | Lamisa`,
       description: `${concept.subtitle}. ${concept.theme}`,
       type: 'website',
+      images: concept.heroImage ? [
+        {
+          url: concept.heroImage,
+          width: 1400,
+          height: 700,
+          alt: concept.heroImageAlt || `${concept.title} concept`,
+        },
+      ] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: `${concept.title} - Concept ${concept.id} | Lamisa`,
       description: `${concept.subtitle}. ${concept.theme}`,
+      images: concept.heroImage ? [concept.heroImage] : undefined,
     },
   };
 }

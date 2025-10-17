@@ -10,6 +10,9 @@ export interface MenuConcept {
   subtitle: string;
   theme: string;
   cuisine: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  galleryImages?: string[];
   items: MenuItem[];
 }
 
@@ -20,6 +23,18 @@ export const concepts: Record<string, MenuConcept> = {
     subtitle: "A Journey Through Memory & Flavor",
     theme: "Merging Filipino flavours to Chinese staples, Filipino street style, but home edition",
     cuisine: "Filipino / Chinese influence",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1760736556/DSC04934_patl78.jpg",
+    heroImageAlt: "Heritage concept hero image showcasing Filipino-Chinese fusion cuisine",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736558/IMG_9791_oxir7g.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736557/IMG_0463_crlvzg.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736556/DSC04934_patl78.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736557/DSC04942_shrd2p.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736557/DSC04936_fzk9nu.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736558/IMG_9826_zgimy7.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736557/DSC04937_cwopwi.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1760736557/IMG_0457_jsso25.jpg"
+    ],
     items: [
       {
         name: "Munchers Dip",

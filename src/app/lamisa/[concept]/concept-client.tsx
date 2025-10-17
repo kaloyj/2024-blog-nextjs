@@ -2,7 +2,8 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, Instagram } from "lucide-react";
 import { MenuConcept } from "@/data/lamisa-concepts";
 
 interface ConceptClientProps {
@@ -12,79 +13,98 @@ interface ConceptClientProps {
 export default function ConceptClient({ concept }: ConceptClientProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-950 via-amber-950 to-orange-950">
-      {/* Header */}
-      <motion.header
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative py-20 px-6 overflow-hidden"
-      >
-        {/* Decorative Elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 bg-amber-600/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-orange-600/30 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Link 
-              href="/lamisa" 
-              className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 mb-8 transition-colors font-medium"
+      {/* Decorative Elements */}
+      <div className="absolute top-10 right-10 w-32 h-32 bg-amber-600/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-96 left-10 w-40 h-40 bg-orange-600/30 rounded-full blur-3xl"></div>
+
+      {/* Hero Section with Image and Content */}
+      {concept.heroImage && (
+        <section className="relative md:px-6 md:pt-12 pb-12 md:pb-16">
+          <div className="md:max-w-6xl md:mx-auto">
+            {/* Hero Card */}
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative h-[500px] md:h-[600px] rounded-b-3xl md:rounded-3xl overflow-hidden md:shadow-2xl"
             >
-              <ArrowLeft size={20} />
-              <span style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Back to Main Menu</span>
-            </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center"
-          >
-            <div className="mb-4">
-              <span className="text-amber-400/60 text-xl font-bold tracking-widest" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                CONCEPT {concept.id}
-              </span>
-            </div>
-            <h1 className="text-7xl md:text-8xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
-              {concept.title.toUpperCase()}
-            </h1>
-            <p className="text-2xl md:text-3xl text-amber-200 mb-8 font-medium tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              {concept.subtitle}
-            </p>
-            
-            {/* Theme & Cuisine Info */}
-            <div className="max-w-3xl mx-auto space-y-3 mb-6">
-              <div className="text-center">
-                <p className="text-xs uppercase tracking-widest text-amber-400/60 mb-1 font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Cuisine
-                </p>
-                <p className="text-amber-200/80 text-base italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {concept.cuisine}
-                </p>
-              </div>
+              {/* Hero Image */}
+              <Image
+                src={concept.heroImage}
+                alt={concept.heroImageAlt || `${concept.title} concept hero image`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1152px"
+                priority
+              />
               
-              <div className="text-center">
-                <p className="text-xs uppercase tracking-widest text-amber-400/60 mb-1 font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Theme
-                </p>
-                <p className="text-amber-200/70 text-sm leading-relaxed italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {concept.theme}
-                </p>
-              </div>
-            </div>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-amber-950/90 via-amber-950/60 to-amber-950/90 z-10"></div>
 
-            <div className="flex items-center justify-center gap-4 text-amber-300">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-500/50"></div>
-              <p className="text-sm uppercase tracking-widest font-medium" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Menu</p>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-500/50"></div>
-            </div>
-          </motion.div>
-        </div>
-      </motion.header>
+              {/* Content Overlay */}
+              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+                <motion.div
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  <div className="mb-4">
+                    <span className="text-amber-400/90 text-lg font-bold tracking-widest drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      CONCEPT {concept.id}
+                    </span>
+                  </div>
+                  
+                  <h1 className="text-6xl md:text-7xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-100 to-orange-100 tracking-tight drop-shadow-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
+                    {concept.title.toUpperCase()}
+                  </h1>
+                  
+                  <p className="text-xl md:text-2xl text-amber-100 mb-6 font-medium tracking-wider drop-shadow-lg max-w-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    {concept.subtitle}
+                  </p>
+                  
+                  {/* Theme & Cuisine Info */}
+                  <div className="max-w-2xl mx-auto space-y-2 mb-8">
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-amber-300/80 mb-1 font-semibold drop-shadow" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                        Cuisine
+                      </p>
+                      <p className="text-amber-100/90 text-sm italic drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                        {concept.cuisine}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-amber-300/80 mb-1 font-semibold drop-shadow" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                        Theme
+                      </p>
+                      <p className="text-amber-100/80 text-xs leading-relaxed italic drop-shadow-lg max-w-xl mx-auto" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                        {concept.theme}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Date */}
+                  <div className="flex items-center justify-center text-amber-200 mt-8">
+                    <p className="text-xs tracking-widest font-medium drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>October 15, 2025</p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* Menu Label */}
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex items-center justify-center gap-4 text-amber-300 mb-12"
+      >
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400/50"></div>
+        <p className="text-sm uppercase tracking-widest font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Menu</p>
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/50"></div>
+      </motion.div>
 
       {/* Menu Items */}
       <main className="max-w-5xl mx-auto px-6 pb-20">
@@ -118,23 +138,101 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
           ))}
         </div>
 
-        {/* Footer Note */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <div className="bg-stone-800/30 rounded-2xl p-8 border border-stone-700/40">
-            <p className="text-stone-200 text-lg mb-2 font-semibold tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              ✨ Each dish tells a story, each flavor holds a memory ✨
-            </p>
-            <p className="text-stone-300/70 text-sm tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              Concept {concept.id} — {concept.title}
-            </p>
-          </div>
-        </motion.div>
+        {/* Gallery Section */}
+        {concept.galleryImages && concept.galleryImages.length > 0 && (
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-20 -mx-6 md:mx-0"
+          >
+            <div className="text-center mb-8 px-6 md:px-0">
+              <h2 className="text-2xl font-bold text-amber-200 mb-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                Concept {concept.id} — the people
+              </h2>
+            </div>
+
+            <div className="md:space-y-4">
+              {/* First Row - 3 images */}
+              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4">
+                {concept.galleryImages.slice(0, 3).map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-square overflow-hidden md:rounded-lg"
+                >
+                  <Image
+                    src={img}
+                    alt={`Gallery image ${index + 1}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 33vw, 33vw"
+                  />
+                  {/* CSS Gradient Overlay */}
+                  <div className="absolute inset-0 bg-amber-950/25 pointer-events-none"></div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Second Row - 3 images */}
+            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4">
+              {concept.galleryImages.slice(3, 6).map((img, index) => (
+                <motion.div
+                  key={index + 3}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: (index + 3) * 0.05 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-square overflow-hidden md:rounded-lg"
+                >
+                  <Image
+                    src={img}
+                    alt={`Gallery image ${index + 4}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 33vw, 33vw"
+                  />
+                  {/* CSS Gradient Overlay */}
+                  <div className="absolute inset-0 bg-amber-950/25 pointer-events-none"></div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Third Row - 2 images centered */}
+            {concept.galleryImages.length > 6 && (
+              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4">
+                <div className="hidden md:block"></div>
+                {concept.galleryImages.slice(6, 8).map((img, index) => (
+                <motion.div
+                  key={index + 6}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: (index + 6) * 0.05 }}
+                  viewport={{ once: true }}
+                  className="relative aspect-square overflow-hidden md:rounded-lg"
+                >
+                  <Image
+                    src={img}
+                    alt={`Gallery image ${index + 7}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 33vw, 33vw"
+                  />
+                  {/* CSS Gradient Overlay */}
+                  <div className="absolute inset-0 bg-amber-950/25 pointer-events-none"></div>
+                </motion.div>
+              ))}
+              </div>
+            )}
+            </div>
+          </motion.div>
+        )}
+
+
       </main>
 
       {/* Decorative Footer */}
@@ -167,6 +265,53 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
           </motion.div>
         </div>
       </footer>
+
+      {/* Share to Instagram Section */}
+      <div className="py-12 text-center bg-gradient-to-b from-amber-950/50 to-amber-950/30">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-amber-300/80 text-sm mb-4 tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              Enjoyed this concept? Check other{' '}
+              <Link 
+                href="/lamisa" 
+                className="text-amber-200 hover:text-amber-100 underline decoration-amber-500/50 hover:decoration-amber-400 transition-colors font-medium"
+              >
+                concepts
+              </Link>
+              , or share with your friends
+            </p>
+            <button
+              onClick={() => {
+                const url = window.location.href;
+                const text = `Check out Concept ${concept.id} - ${concept.title} at Lamisa! 🍽️✨`;
+                // For mobile, try to open Instagram app, otherwise copy to clipboard
+                if (navigator.share) {
+                  navigator.share({
+                    title: `Lamisa - Concept ${concept.id}`,
+                    text: text,
+                    url: url,
+                  }).catch(() => {});
+                } else {
+                  // Fallback: copy to clipboard
+                  navigator.clipboard.writeText(`${text}\n${url}`);
+                  alert('Link copied to clipboard! Share it on Instagram 📋');
+                }
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm font-medium group"
+            >
+              <Instagram size={16} className="group-hover:rotate-12 transition-transform" />
+              <span style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                Share to Instagram
+              </span>
+            </button>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
