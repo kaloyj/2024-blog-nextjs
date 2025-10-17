@@ -5,50 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Instagram } from "lucide-react";
 import { MenuConcept } from "@/data/lamisa-concepts";
-import { useRef } from "react";
 
 interface ConceptClientProps {
   concept: MenuConcept;
 }
 
 export default function ConceptClient({ concept }: ConceptClientProps) {
-  const heroSectionRef = useRef<HTMLDivElement>(null);
-
-  const handleShareToInstagram = async () => {
-    const url = window.location.href;
-    const text = `Check out Concept ${concept.id} - ${concept.title} at Lamisa! 🍽️✨`;
-    
-    // Try native share (works on mobile)
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: `Lamisa - Concept ${concept.id}`,
-          text: text,
-          url: url,
-        });
-        return;
-      } catch {
-        // User cancelled or share failed, continue to fallback
-      }
-    }
-    
-    // Fallback: copy to clipboard and open Instagram
-    try {
-      await navigator.clipboard.writeText(`${text}\n${url}`);
-      
-      // Try to open Instagram app (works on mobile if installed)
-      const instagramUrl = `instagram://story-camera`;
-      window.location.href = instagramUrl;
-      
-      // Fallback to web Instagram after a delay
-      setTimeout(() => {
-        alert('Link copied to clipboard! 📋\n\nTo share to Instagram Stories:\n1. Open Instagram\n2. Create a new story\n3. Take a screenshot of this page or add a link sticker\n4. Paste the link from your clipboard');
-      }, 1000);
-    } catch {
-      // dont do anything
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-950 via-amber-950 to-orange-950">
       {/* Decorative Elements */}
@@ -61,7 +23,6 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
           <div className="md:max-w-6xl md:mx-auto">
             {/* Hero Card */}
             <motion.div
-              ref={heroSectionRef}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -305,7 +266,7 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
         </div>
       </footer>
 
-      {/* Share to Instagram Section */}
+      {/* Instagram Link Section */}
       <div className="py-12 text-center bg-gradient-to-b from-amber-950/50 to-amber-950/30">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
@@ -322,17 +283,19 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
               >
                 concepts
               </Link>
-              , or share with your friends
+              , or follow us on Instagram
             </p>
-            <button
-              onClick={handleShareToInstagram}
+            <a
+              href="https://www.instagram.com/lamisa.brunch"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm font-medium group"
             >
               <Instagram size={16} className="group-hover:rotate-12 transition-transform" />
               <span style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                Share to Instagram Stories
+                @lamisa.brunch
               </span>
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
