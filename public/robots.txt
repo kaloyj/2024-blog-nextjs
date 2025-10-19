@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /secret-09301998
+
+Sitemap: https://yourdomain.com/sitemap.xml
+
