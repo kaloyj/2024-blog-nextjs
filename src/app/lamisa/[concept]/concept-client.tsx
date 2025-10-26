@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Instagram } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { MenuConcept } from "@/data/lamisa-concepts";
 
 interface ConceptClientProps {
@@ -11,11 +13,45 @@ interface ConceptClientProps {
 }
 
 export default function ConceptClient({ concept }: ConceptClientProps) {
+  const searchParams = useSearchParams();
+  const isInvited = searchParams.get('invite') === '1';
+  const [showToast, setShowToast] = useState(isInvited);
+
+  useEffect(() => {
+    if (isInvited) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 2500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isInvited]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-950 via-amber-950 to-orange-950">
       {/* Decorative Elements */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-amber-600/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-96 left-10 w-40 h-40 bg-orange-600/30 rounded-full blur-3xl"></div>
+
+      {/* Invite Toast */}
+      {showToast && (
+        <motion.div
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="fixed top-4 left-0 right-0 flex justify-center z-50 pointer-events-none"
+        >
+          <div className="bg-amber-900/90 backdrop-blur-sm border border-amber-600/50 rounded-lg px-6 py-4 shadow-lg pointer-events-auto">
+            <p className="text-amber-200 text-sm font-medium tracking-widest text-center" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              You have been invited to:
+            </p>
+            <p className="text-amber-100 text-lg font-bold tracking-wide text-center mt-1" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              {concept.title}
+            </p>
+          </div>
+        </motion.div>
+      )}
 
       {/* Hero Section with Image and Content */}
       {concept.heroImage && (
@@ -84,9 +120,11 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
                   </div>
 
                   {/* Date */}
-                  <div className="flex items-center justify-center text-amber-200 mt-8">
-                    <p className="text-xs tracking-widest font-medium drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>October 15, 2025</p>
-                  </div>
+                  {concept.date && (
+                    <div className="flex items-center justify-center text-amber-200 mt-8">
+                      <p className="text-xs tracking-widest font-medium drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{concept.date}</p>
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </motion.div>

@@ -1,4 +1,4 @@
-import { use } from 'react';
+import { use, Suspense } from 'react';
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getConcept, getAllConceptIds } from "@/data/lamisa-concepts";
@@ -59,6 +59,14 @@ export default function ConceptPage({ params }: ConceptPageProps) {
     notFound();
   }
 
-  return <ConceptClient concept={concept} />;
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-yellow-950 via-amber-950 to-orange-950 flex items-center justify-center">
+        <div className="text-amber-200 text-lg">Loading...</div>
+      </div>
+    }>
+      <ConceptClient concept={concept} />
+    </Suspense>
+  );
 }
 

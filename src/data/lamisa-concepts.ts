@@ -10,6 +10,7 @@ export interface MenuConcept {
   subtitle: string;
   theme: string;
   cuisine: string;
+  date?: string;
   heroImage?: string;
   heroImageAlt?: string;
   galleryImages?: string[];
@@ -23,6 +24,7 @@ export const concepts: Record<string, MenuConcept> = {
     subtitle: "A Journey Through Memory & Flavor",
     theme: "Merging Filipino flavours to Chinese staples, Filipino street style, but home edition",
     cuisine: "Filipino / Chinese influence",
+    date: "October 15, 2025",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1760736556/DSC04934_patl78.jpg",
     heroImageAlt: "Heritage concept hero image showcasing Filipino-Chinese fusion cuisine",
     galleryImages: [
@@ -60,6 +62,45 @@ export const concepts: Record<string, MenuConcept> = {
         name: "??? - Surprise Dessert",
         description: "A secret sweet ending that honors tradition with a modern twist",
         story: "Some stories are best told in the moment, some flavors are meant to be discovered. This final dish remains a mystery until the day of the event — a sweet surprise that will complete your journey through heritage and memory."
+      }
+    ]
+  },
+  "001": {
+    id: "001",
+    title: "Silingan",
+    subtitle: "reinforcing neighborhood culture and codependency through food",
+    theme: "Integrating Filipino culture to the brunch scene with the hopes of tearing down hyperindependence and fostering the culture of neighborhood and community",
+    cuisine: "Filipino / brunch style",
+    date: "November 2, 2025",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_crop,w_1400,h_1200,g_auto/v1761502094/IMG_7503_e9t2cs.jpg",
+    heroImageAlt: "Silingan concept hero image showcasing Filipino brunch culture and neighborhood connections",
+    items: [
+      {
+        name: "Pandesal Sandwich",
+        description: "Pandesal, the beloved Filipino breakfast bread, transformed into a hearty sandwich with creamy avocado, tangy pickled onions, fluffy scrambled eggs, and crispy bacon",
+        story: "Pandesal is the cornerstone of Filipino breakfast culture - soft, slightly sweet bread that brings families together every morning. We're reimagining this classic by turning it into a satisfying sandwich that celebrates both tradition and innovation."
+      },
+      {
+        name: "Tocino Skewers",
+        description: "Homemade tocino, the sweet and savory Filipino cured pork, grilled to perfection and served on skewers for easy sharing",
+        story: "Tocino is traditionally a breakfast staple in Filipino households, cured with sugar, salt, and spices. Our homemade version takes this beloved comfort food and presents it as shareable skewers, perfect for bringing neighbors together around the table."
+      },
+      {
+        name: "Turon French Toast",
+        description: "French toast reimagined with turon ingredients - ripe banana and jackfruit - served with a luxurious whipped maple mascarpone cream",
+        story: "Turon is a popular Filipino street food - banana and jackfruit wrapped in spring roll wrapper and fried. We've taken these beloved flavors and transformed them into a decadent French toast, bridging Filipino street food culture with brunch sophistication."
+      },
+      {
+        name: "Espresso",
+        description: "Rich, bold espresso to start your morning right"
+      },
+      {
+        name: "Americano",
+        description: "Smooth, balanced americano for those who prefer a longer coffee experience"
+      },
+      {
+        name: "Orange Juice",
+        description: "Fresh, vibrant orange juice to complement your brunch experience"
       }
     ]
   }
