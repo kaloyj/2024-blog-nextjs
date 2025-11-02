@@ -74,6 +74,16 @@ export const concepts: Record<string, MenuConcept> = {
     date: "November 2, 2025",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_crop,w_1400,h_1200,g_auto/v1761502094/IMG_7503_e9t2cs.jpg",
     heroImageAlt: "Silingan concept hero image showcasing Filipino brunch culture and neighborhood connections",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108693/IMG_0971_tkknyi.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108693/64379B5C-9694-4D92-AC92-25C17DBB4079_veydjj.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108694/DSC05130_ewdg6x.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108694/DSC05118_j9hu7w.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108694/IMG_0953_yf4jhg.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108694/DSC05120_n37hqb.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108814/DSC05114_ctmwkg.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1762108693/5b1fb3f5-b99b-481f-ae41-b5d876070741_scduug.jpg"
+    ],
     items: [
       {
         name: "Pandesal Sandwich",

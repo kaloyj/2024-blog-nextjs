@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { getAllConceptIds, getConcept } from "@/data/lamisa-concepts";
 
 const menuItems = {
   savoury: [
@@ -122,7 +123,7 @@ export default function LamisaMenu() {
         <motion.section
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mb-20"
         >
@@ -134,12 +135,12 @@ export default function LamisaMenu() {
           </div>
 
           <div className="grid gap-8">
-            {menuItems.savoury.map((item, index) => (
+            {menuItems.savoury.map((item) => (
               <motion.div
                 key={item.name}
-                initial={{ x: -30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="bg-amber-900/30 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-800/40 hover:border-amber-600/60"
               >
@@ -160,7 +161,7 @@ export default function LamisaMenu() {
         <motion.section
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
@@ -171,12 +172,12 @@ export default function LamisaMenu() {
           </div>
 
           <div className="grid gap-8">
-            {menuItems.sweet.map((item, index) => (
+            {menuItems.sweet.map((item) => (
               <motion.div
                 key={item.name}
-                initial={{ x: 30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="bg-amber-900/30 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-800/40 hover:border-amber-600/60"
               >
@@ -197,7 +198,7 @@ export default function LamisaMenu() {
         <motion.section
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mt-20"
         >
@@ -209,12 +210,12 @@ export default function LamisaMenu() {
           </div>
 
           <div className="grid gap-8">
-            {menuItems.drinks.map((item, index) => (
+            {menuItems.drinks.map((item) => (
               <motion.div
                 key={item.name}
-                initial={{ x: -30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
                 className="bg-stone-800/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-stone-700/40 hover:border-stone-500/60"
               >
@@ -237,7 +238,7 @@ export default function LamisaMenu() {
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
@@ -258,7 +259,7 @@ export default function LamisaMenu() {
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
@@ -272,51 +273,65 @@ export default function LamisaMenu() {
           </motion.div>
 
           <div className="grid gap-8">
-            <motion.article
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-amber-900/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-amber-800/40 hover:border-amber-600/60 transition-all duration-300 group"
-            >
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="bg-amber-800/50 text-amber-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    CONCEPT 000
-                  </span>
-                  <span className="bg-orange-800/50 text-orange-200 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    Latest
-                  </span>
-                </div>
-                
-                <h3 className="text-4xl font-black text-amber-100 mb-4 group-hover:text-amber-200 transition-colors tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Heritage
-                </h3>
-                
-                <p className="text-amber-200/70 text-base mb-3 italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Filipino / Chinese influence
-                </p>
-                
-                <p className="text-amber-200/80 leading-relaxed mb-6" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  Merging Filipino flavours to Chinese staples, Filipino street style, but home edition. A journey through memory and flavor, where each dish tells a personal story.
-                </p>
-                
-                <Link 
-                  href="/lamisa/000"
-                  className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-amber-950 px-6 py-3 rounded-full font-bold transition-colors group-hover:gap-3 duration-300"
-                  style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+            {getAllConceptIds()
+              .sort((a, b) => parseInt(b) - parseInt(a)) // Sort descending so latest (001) appears first
+              .map((conceptId) => getConcept(conceptId))
+              .filter((concept): concept is NonNullable<typeof concept> => concept !== null)
+              .map((concept, index) => (
+                <motion.article
+                  key={concept.id}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true }}
+                  className="bg-amber-900/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-amber-800/40 hover:border-amber-600/60 transition-all duration-300 group"
                 >
-                  Explore Concept
-                  <ArrowLeft size={18} className="rotate-180 transition-transform" />
-                </Link>
-              </div>
-            </motion.article>
+                  <div className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="bg-amber-800/50 text-amber-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                        CONCEPT {concept.id}
+                      </span>
+                      {index === 0 && (
+                        <span className="bg-orange-800/50 text-orange-200 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                          Latest
+                        </span>
+                      )}
+                      {concept.date && (
+                        <span className="bg-amber-700/50 text-amber-200 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                          {concept.date}
+                        </span>
+                      )}
+                    </div>
+                    
+                    <h3 className="text-4xl font-black text-amber-100 mb-4 group-hover:text-amber-200 transition-colors tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      {concept.title}
+                    </h3>
+                    
+                    <p className="text-amber-200/70 text-base mb-3 italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      {concept.cuisine}
+                    </p>
+                    
+                    <p className="text-amber-200/80 leading-relaxed mb-6" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                      {concept.theme}
+                    </p>
+                    
+                    <Link 
+                      href={`/lamisa/${concept.id}`}
+                      className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-amber-950 px-6 py-3 rounded-full font-bold transition-colors group-hover:gap-3 duration-300"
+                      style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+                    >
+                      Explore Concept
+                      <ArrowLeft size={18} className="rotate-180 transition-transform" />
+                    </Link>
+                  </div>
+                </motion.article>
+              ))}
           </div>
 
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="text-center mt-8"
           >
@@ -342,7 +357,7 @@ export default function LamisaMenu() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             <Link 
