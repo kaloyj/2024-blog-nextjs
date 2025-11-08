@@ -113,6 +113,40 @@ export const concepts: Record<string, MenuConcept> = {
         description: "Fresh, vibrant orange juice to complement your brunch experience"
       }
     ]
+  },
+  "002": {
+    id: "002",
+    title: "PAMAHAW",
+    subtitle: "meaning breakfast in Cebuano, the important start for Filipinos to the day's endless possibilities",
+    theme: "everyday filipino breakfast food combined with hallmark spanish dishes",
+    cuisine: "Spanish and Filipino",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1762641601/346C396F-E38E-4D3E-8FEA-F13DEEAF76A5_qi6pgc.jpg",
+    heroImageAlt: "PAMAHAW concept hero image showcasing Filipino-Spanish breakfast fusion cuisine",
+    items: [
+      {
+        name: "Corned Beef Sandwich",
+        description: "Bocadillos - a Spanish classic reimagined with Filipino breakfast soul. Homemade corned beef nestled in fresh buns, topped with perfectly fried egg, tangy pickled onions, and a sweet garlic sauce that ties it all together",
+        story: "Corned beef holds a special place in Filipino breakfast culture - it's the comfort food that many Filipinos grew up with, often fried with onions and garlic, served alongside rice and eggs. It's affordable, easy to prepare, and has become a beloved morning staple that brings families together around the breakfast table. The bocadillo, Spain's beloved sandwich tradition, meets this heartiness of Filipino breakfast corned beef - a fusion that celebrates both cultures in every bite."
+      },
+      {
+        name: "Huevos Rotos Tortang Talong Edition",
+        description: "Two staples merged into one - crispy golden potatoes and tender grilled eggplant, crowned with perfectly creamy scrambled eggs and jamón iberico from Extremadura, creating a harmonious blend of Spanish comfort and Filipino breakfast tradition",
+        story: "Huevos rotos, the Spanish broken eggs dish, meets tortang talong, the beloved Filipino eggplant omelet. This dish represents the beautiful collision of two breakfast cultures - where Spanish technique meets Filipino flavors, creating something entirely new yet deeply familiar."
+      },
+      {
+        name: "Champorado (Arroz con Leche) - Filipino Breakfast Style",
+        description: "Creamy rice cooked with rich cocoa, sweetened with evaporated milk, and balanced with salty cured bacon to cut through the richness, creating a balance of sweet and salty flavors in your breakfast bowl",
+        story: "Arroz con leche, Spain's comforting rice pudding, meets champorado, the Filipino chocolate rice porridge that has warmed countless mornings. This fusion honors both traditions - the Spanish elegance of arroz con leche with the bold, comforting flavors of Filipino champorado, finished with salty cured bacon that btings flavor to every spoonful."
+      },
+      {
+        name: "Americano",
+        description: "Smooth, balanced americano for those who prefer a longer coffee experience"
+      },
+      {
+        name: "Orange Juice",
+        description: "Fresh, vibrant orange juice to complement your brunch experience"
+      }
+    ]
   }
 };
 
