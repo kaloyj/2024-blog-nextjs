@@ -116,6 +116,91 @@ export const concepts: Record<string, MenuConcept> = {
   },
   "002": {
     id: "002",
+    title: "Christmas",
+    subtitle: "a moment to pause, slow down, and share a table with the people that we love",
+    theme: "gather around the table to share Lamisa's favorite dishes across the entire year",
+    cuisine: "Multicultural",
+    date: "December 24, 2025",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766441465/IMG_9316_b56pps.jpg",
+    heroImageAlt: "Christmas dinner with candles and festive table setting",
+    items: [
+      {
+        name: "Biscuits & Spanish Turrón",
+        description: "Homemade biscuits, warm and buttery, paired with traditional Spanish nougat - a sweet holiday classic that brings the warmth of Mediterranean Christmas traditions to the table, served as a welcoming start to the evening"
+      },
+      {
+        name: "Opening Drinks",
+        description: "A selection of festive beverages to welcome you and set the tone for an evening of celebration and connection"
+      },
+      {
+        name: "Jamón Melon Brie Jam Canapé Roll",
+        description: "An elegant starter combining the saltiness of Spanish jamón, the sweetness of fresh melon, creamy brie, and a touch of jam, all rolled into a delicate canapé that celebrates the harmony of flavors"
+      },
+      {
+        name: "Lumpia",
+        description: "Crispy Filipino spring rolls, filled with a savory blend of vegetables and meat, fried to golden perfection - a beloved dish that brings comfort and joy to any gathering"
+      },
+      {
+        name: "Classic Butter Basted Steak",
+        description: "A perfectly cooked steak, basted with rich butter and aromatic herbs, creating a tender, flavorful centerpiece that honors the tradition of gathering around a beautiful main course"
+      },
+      {
+        name: "Crunchy Fennel Salad",
+        description: "Fresh fennel, crisp and refreshing, tossed in a light dressing to complement the richness of the steak with its bright, anise-like flavor"
+      },
+      {
+        name: "Arroz con Leche with Biscoff and Almond Liqueur",
+        description: "Creamy Spanish rice pudding, elevated with the warm spice of Biscoff cookies and the subtle sweetness of almond liqueur - a comforting dessert that brings together the best of European traditions"
+      },
+      {
+        name: "Hot Chocolate",
+        description: "Rich, velvety hot chocolate to warm your hands and heart on this special evening"
+      },
+      {
+        name: "Wine",
+        description: "A carefully selected wine to complement the flavors of the evening and enhance the celebration"
+      },
+      {
+        name: "Tea",
+        description: "A selection of fine teas to enjoy as you linger at the table, continuing conversations with loved ones"
+      }
+    ]
+  },
+  "003": {
+    id: "003",
+    title: "beginnings",
+    subtitle: "looking back on things we've started, and looking onwards for the things we'll be doing",
+    theme: "sharing a table with the people who started my journey here in Europe",
+    cuisine: "Brunch",
+    date: "January 10, 2026",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1762641601/346C396F-E38E-4D3E-8FEA-F13DEEAF76A5_qi6pgc.jpg",
+    heroImageAlt: "beginnings concept hero image showcasing brunch cuisine",
+    items: [
+      {
+        name: "Turon French Toast",
+        description: "French toast reimagined with turon ingredients - ripe banana and jackfruit - served with a luxurious whipped maple mascarpone cream",
+        story: "Turon is a popular Filipino street food - banana and jackfruit wrapped in spring roll wrapper and fried. We've taken these beloved flavors and transformed them into a decadent French toast, bridging Filipino street food culture with brunch sophistication."
+      },
+      {
+        name: "Brioche with Filipino Omelette Toast",
+        description: "Buttery brioche paired with a Filipino-style omelette - a fusion that brings together European bread tradition with Filipino breakfast comfort, creating a hearty and satisfying brunch dish"
+      },
+      {
+        name: "Pancit Canton Frittata",
+        description: "Filipino egg noodles baked with farm-fresh eggs and seasonal vegetables, topped with crispy pork belly and tangy soy-calamansi sauce"
+      },
+      {
+        name: "Orange Juice",
+        description: "Fresh, vibrant orange juice to complement your brunch experience"
+      },
+      {
+        name: "Coffee",
+        description: "Rich, aromatic coffee to awaken your senses and fuel meaningful conversations around the table"
+      }
+    ]
+  },
+  "004": {
+    id: "004",
     title: "PAMAHAW",
     subtitle: "meaning breakfast in Cebuano, the important start for Filipinos to the day's endless possibilities",
     theme: "everyday filipino breakfast food combined with hallmark spanish dishes",
