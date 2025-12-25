@@ -123,6 +123,16 @@ export const concepts: Record<string, MenuConcept> = {
     date: "December 24, 2025",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766441465/IMG_9316_b56pps.jpg",
     heroImageAlt: "Christmas dinner with candles and festive table setting",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687964/DSC05490_t1lqvl.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687963/DSC05455_ap9iot.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687962/IMG_6223_euutyn.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687963/DSC05481_ux0ld9.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687962/IMG_6221_duhc0h.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687962/IMG_6192_f58cry.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687962/IMG_6224_mhphfs.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1766687963/IMG_6165_tnvcij.jpg"
+    ],
     items: [
       {
         name: "Biscuits & Spanish Turrón",
