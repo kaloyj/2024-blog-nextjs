@@ -187,17 +187,19 @@ export const concepts: Record<string, MenuConcept> = {
     heroImageAlt: "beginnings concept hero image showcasing brunch cuisine",
     items: [
       {
+        name: "Filipino Chicken Sandwich",
+        description: "Crispy buttermilk fried chicken kissed with Filipino spices and a hint of calamansi heat, nestled in a toasted brioche bun with tangy coleslaw and house-made pickles that cut through the richness with every bite",
+        story: "The fried chicken sandwich has become a brunch staple around the world, but we wanted to bring it home. By infusing the marinade with Filipino aromatics and finishing with a calamansi-spiked aioli, this sandwich becomes a love letter to Filipino flavors wrapped in familiar comfort."
+      },
+      {
+        name: "Ube Pancakes",
+        description: "Fluffy violet-hued pancakes infused with real ube, stacked high and crowned with a cloud of ube maple whipped cream - a celebration of Filipino purple yam in the most indulgent way",
+        story: "Ube has taken the world by storm, but for Filipinos, it's always been home. These pancakes honor that heritage, transforming the beloved purple yam into a dreamy brunch centerpiece that's as beautiful as it is delicious."
+      },
+      {
         name: "Turon French Toast",
         description: "French toast reimagined with turon ingredients - ripe banana and jackfruit - served with a luxurious whipped maple mascarpone cream",
         story: "Turon is a popular Filipino street food - banana and jackfruit wrapped in spring roll wrapper and fried. We've taken these beloved flavors and transformed them into a decadent French toast, bridging Filipino street food culture with brunch sophistication."
-      },
-      {
-        name: "Brioche with Filipino Omelette Toast",
-        description: "Buttery brioche paired with a Filipino-style omelette - a fusion that brings together European bread tradition with Filipino breakfast comfort, creating a hearty and satisfying brunch dish"
-      },
-      {
-        name: "Pancit Canton Frittata",
-        description: "Filipino egg noodles baked with farm-fresh eggs and seasonal vegetables, topped with crispy pork belly and tangy soy-calamansi sauce"
       },
       {
         name: "Orange Juice",
