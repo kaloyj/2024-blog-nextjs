@@ -185,6 +185,16 @@ export const concepts: Record<string, MenuConcept> = {
     date: "January 10, 2026",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1762641601/346C396F-E38E-4D3E-8FEA-F13DEEAF76A5_qi6pgc.jpg",
     heroImageAlt: "beginnings concept hero image showcasing brunch cuisine",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299446/80104D71-91AC-490B-B213-D5CA1C99B3BA_m93j9a.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299447/33274736-e4de-4628-a393-c831273970af_w9guum.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299448/IMG_6877_et03re.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299447/f77f3d37-cffc-4517-8a5e-10a16d830339_pigibf.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299447/IMG_6867_tjeyy5.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299447/IMG_6888_xzln2h.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299448/IMG_6872_sww3gj.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1768299446/IMG_6879_azg5nf.jpg"
+    ],
     items: [
       {
         name: "Filipino Chicken Sandwich",
@@ -213,22 +223,22 @@ export const concepts: Record<string, MenuConcept> = {
   },
   "004": {
     id: "004",
-    title: "PAMAHAW",
-    subtitle: "meaning breakfast in Cebuano, the important start for Filipinos to the day's endless possibilities",
-    theme: "everyday filipino breakfast food combined with hallmark spanish dishes",
-    cuisine: "Spanish and Filipino",
-    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1762641601/346C396F-E38E-4D3E-8FEA-F13DEEAF76A5_qi6pgc.jpg",
-    heroImageAlt: "PAMAHAW concept hero image showcasing Filipino-Spanish breakfast fusion cuisine",
+    title: "Provenza",
+    subtitle: "my old flat in Barcelona, an ode to roommates and shared journeys",
+    theme: "experimenting with flavors from home with the people who have made new spaces less lonely",
+    cuisine: "Filipino brunch",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1768299446/80104D71-91AC-490B-B213-D5CA1C99B3BA_m93j9a.jpg",
+    heroImageAlt: "brunch concept hero image showcasing Filipino brunch cuisine",
     items: [
       {
-        name: "Corned Beef Sandwich",
-        description: "Bocadillos - a Spanish classic reimagined with Filipino breakfast soul. Homemade corned beef nestled in fresh buns, topped with perfectly fried egg, tangy pickled onions, and a sweet garlic sauce that ties it all together",
-        story: "Corned beef holds a special place in Filipino breakfast culture - it's the comfort food that many Filipinos grew up with, often fried with onions and garlic, served alongside rice and eggs. It's affordable, easy to prepare, and has become a beloved morning staple that brings families together around the breakfast table. The bocadillo, Spain's beloved sandwich tradition, meets this heartiness of Filipino breakfast corned beef - a fusion that celebrates both cultures in every bite."
+        name: "Crispy Garlic Fried Rice with Tocino and Eggs",
+        description: "Day-old rice transformed into golden, crackling bites inspired by Japanese crispy rice technique - each grain toasted until crunchy, infused with fragrant garlic, and paired with sweet-cured tocino and sunny-side-up eggs that spill their yolk across the dish",
+        story: "Tocino is one of the Philippines' most beloved breakfast meats - pork cured in a sweet mixture of sugar, salt, annatto, and spices, then pan-fried until caramelized and slightly charred at the edges. Traditionally served with garlic fried rice (sinangag) and eggs as 'tosilog', it's a breakfast combination that has fueled countless Filipino mornings. We've elevated this classic by borrowing from Japanese technique - pressing and crisping the fried rice until it develops that satisfying crunch, creating a textural playground where crispy meets sweet meets runny yolk."
       },
       {
-        name: "Huevos Rotos Tortang Talong Edition",
-        description: "Two staples merged into one - crispy golden potatoes and tender grilled eggplant, crowned with perfectly creamy scrambled eggs and jamón iberico from Extremadura, creating a harmonious blend of Spanish comfort and Filipino breakfast tradition",
-        story: "Huevos rotos, the Spanish broken eggs dish, meets tortang talong, the beloved Filipino eggplant omelet. This dish represents the beautiful collision of two breakfast cultures - where Spanish technique meets Filipino flavors, creating something entirely new yet deeply familiar."
+        name: "Avocado French Toast",
+        description: "Classic golden French toast crowned with silky whipped avocado cream and topped with brûléed avocado slices - the crackling caramelized sugar giving way to cool, creamy fruit beneath, a tribute to the Filipino avocado dessert tradition",
+        story: "In the Philippines, avocado is celebrated as a dessert, not a savory ingredient. Mashed with condensed milk or sugar, it becomes 'avocado shake' - a sweet, creamy treat found in every Filipino household and streetside stall. This dish honors that tradition, transforming our beloved Turon French Toast concept with avocado taking center stage. The whipped avocado cream brings that familiar Filipino sweetness, while the brûléed topping adds a sophisticated caramelized crunch that bridges two worlds - Filipino merienda and European brunch elegance."
       },
       {
         name: "Champorado (Arroz con Leche) - Filipino Breakfast Style",

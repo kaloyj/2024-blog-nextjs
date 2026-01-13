@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { getAllConceptIds, getConcept } from "@/data/lamisa-concepts";
+import Image from "next/image";
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { getAllConceptIds, getConcept, MenuConcept } from "@/data/lamisa-concepts";
 
 const menuItems = {
   savoury: [
@@ -75,47 +77,198 @@ const menuItems = {
 };
 
 export default function LamisaMenu() {
+  const concepts = getAllConceptIds()
+    .sort((a, b) => parseInt(b) - parseInt(a))
+    .map((conceptId) => getConcept(conceptId))
+    .filter((concept): concept is MenuConcept => concept !== undefined);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % concepts.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + concepts.length) % concepts.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-950 via-amber-950 to-orange-950">
       {/* Header */}
       <motion.header
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative py-20 px-6 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="px-4 md:px-6 pt-8 pb-6"
       >
-        {/* Decorative Elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 bg-amber-600/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-orange-600/30 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center"
-          >
-            <h1 className="text-7xl md:text-8xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
-              LAMISA
-            </h1>
-            <p className="text-2xl md:text-3xl text-amber-200 mb-6 font-medium tracking-widest uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '0.15em' }}>
-              Modern Filipino Brunch
-            </p>
-            <div className="max-w-2xl mx-auto mb-6">
-              <p className="text-amber-300/80 text-base leading-relaxed" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                <span className="font-semibold text-amber-200">Lamisa</span> — meaning &quot;table&quot; in Cebuano, 
-                where we gather to share food and stories. Also a playful question: 
-                <span className="italic"> &quot;Lami, sa?&quot;</span> — &quot;Delicious, right?&quot;
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
+            {/* Left side - Brand */}
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 tracking-tight leading-none" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
+                LAMISA
+              </h1>
+              <p className="text-amber-300/70 text-xs md:text-sm tracking-widest uppercase mt-1" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                Modern Filipino Brunch
               </p>
-            </div>
-            <div className="flex items-center justify-center gap-4 text-amber-300">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-500/50"></div>
-              <p className="text-sm uppercase tracking-widest font-medium" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Barcelona</p>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-500/50"></div>
-            </div>
-          </motion.div>
+            </motion.div>
+            
+            {/* Right side - Tagline */}
+            <motion.div
+              initial={{ x: 20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="md:text-right"
+            >
+              <p className="text-amber-300/50 text-xs leading-relaxed max-w-xs" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                <span className="text-amber-300/70">Lamisa</span> — &quot;table&quot; in Cebuano, or <span className="italic">&quot;Lami, sa?&quot;</span> — &quot;Delicious, right?&quot;
+              </p>
+              <p className="text-amber-400/40 text-[10px] uppercase tracking-widest mt-1" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                Barcelona
+              </p>
+            </motion.div>
+          </div>
         </div>
       </motion.header>
+
+      {/* Featured Concepts Carousel */}
+      <section className="pt-4 md:pt-8 pb-12 md:pb-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Main Carousel */}
+            <div className="relative h-[500px] md:h-[550px] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
+              <AnimatePresence mode="wait">
+                {concepts.map((concept, index) => 
+                  index === currentIndex && (
+                    <motion.div
+                      key={concept.id}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0"
+                    >
+                      {/* Hero Image */}
+                      {concept.heroImage && (
+                        <Image
+                          src={concept.heroImage}
+                          alt={concept.heroImageAlt || `${concept.title} concept hero image`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 1152px"
+                          priority={index === 0}
+                        />
+                      )}
+                      
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-amber-950/90 via-amber-950/60 to-amber-950/90 z-10"></div>
+
+                      {/* Content Overlay */}
+                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 md:px-12">
+                        <motion.div
+                          initial={{ y: 30, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{ duration: 0.6, delay: 0.2 }}
+                          className="max-w-3xl"
+                        >
+                          {/* Badges */}
+                          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-4">
+                            <span className="bg-amber-800/60 backdrop-blur-sm text-amber-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                              CONCEPT {concept.id}
+                            </span>
+                            {index === 0 && (
+                              <span className="bg-orange-700/60 backdrop-blur-sm text-orange-200 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                                Latest
+                              </span>
+                            )}
+                            {concept.date && (
+                              <span className="bg-amber-700/60 backdrop-blur-sm text-amber-200 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                                {concept.date}
+                              </span>
+                            )}
+                          </div>
+                          
+                          {/* Title */}
+                          <h3 className="text-5xl md:text-6xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-100 to-orange-100 tracking-tight drop-shadow-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
+                            {concept.title.toUpperCase()}
+                          </h3>
+                          
+                          {/* Subtitle */}
+                          <p className="text-lg md:text-xl text-amber-100 mb-4 font-medium tracking-wider drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                            {concept.subtitle}
+                          </p>
+                          
+                          {/* Cuisine */}
+                          <p className="text-amber-200/80 text-sm md:text-base mb-2 italic drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                            {concept.cuisine}
+                          </p>
+                          
+                          {/* Theme */}
+                          <p className="text-amber-100/70 text-sm leading-relaxed mb-8 max-w-xl mx-auto drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                            {concept.theme}
+                          </p>
+                          
+                          {/* CTA Button */}
+                          <Link 
+                            href={`/lamisa/${concept.id}`}
+                            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-amber-950 px-6 py-3 rounded-full font-bold transition-all duration-300 hover:gap-3 shadow-lg hover:shadow-xl"
+                            style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+                          >
+                            Explore Concept
+                            <ArrowLeft size={18} className="rotate-180 transition-transform" />
+                          </Link>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  )
+                )}
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-amber-900/60 hover:bg-amber-800/80 backdrop-blur-sm text-amber-200 p-2 md:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                aria-label="Previous concept"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-amber-900/60 hover:bg-amber-800/80 backdrop-blur-sm text-amber-200 p-2 md:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                aria-label="Next concept"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+
+            {/* Dot Indicators */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+              {concepts.map((concept, index) => (
+                <button
+                  key={concept.id}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-amber-400 w-8' 
+                      : 'bg-amber-700/50 hover:bg-amber-600/70'
+                  }`}
+                  aria-label={`Go to concept ${concept.id}`}
+                />
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* Menu Content */}
       <main className="max-w-5xl mx-auto px-6 pb-20">
@@ -252,95 +405,6 @@ export default function LamisaMenu() {
           </div>
         </motion.div>
       </main>
-
-      {/* Featured Concepts Section */}
-      <section className="py-20 bg-gradient-to-b from-amber-950/50 to-orange-950/70">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-5xl md:text-6xl font-black text-amber-200 mb-3 tracking-tight uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.01em' }}>
-              Concepts
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-amber-300/80 text-lg max-w-2xl mx-auto" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              Experimental menus exploring different themes, cuisines, and stories
-            </p>
-          </motion.div>
-
-          <div className="grid gap-8">
-            {getAllConceptIds()
-              .sort((a, b) => parseInt(b) - parseInt(a)) // Sort descending so latest (001) appears first
-              .map((conceptId) => getConcept(conceptId))
-              .filter((concept): concept is NonNullable<typeof concept> => concept !== null)
-              .map((concept, index) => (
-                <motion.article
-                  key={concept.id}
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  viewport={{ once: true }}
-                  className="bg-amber-900/30 backdrop-blur-sm rounded-2xl overflow-hidden border border-amber-800/40 hover:border-amber-600/60 transition-all duration-300 group"
-                >
-                  <div className="p-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="bg-amber-800/50 text-amber-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                        CONCEPT {concept.id}
-                      </span>
-                      {index === 0 && (
-                        <span className="bg-orange-800/50 text-orange-200 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                          Latest
-                        </span>
-                      )}
-                      {concept.date && (
-                        <span className="bg-amber-700/50 text-amber-200 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                          {concept.date}
-                        </span>
-                      )}
-                    </div>
-                    
-                    <h3 className="text-4xl font-black text-amber-100 mb-4 group-hover:text-amber-200 transition-colors tracking-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                      {concept.title}
-                    </h3>
-                    
-                    <p className="text-amber-200/70 text-base mb-3 italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                      {concept.cuisine}
-                    </p>
-                    
-                    <p className="text-amber-200/80 leading-relaxed mb-6" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                      {concept.theme}
-                    </p>
-                    
-                    <Link 
-                      href={`/lamisa/${concept.id}`}
-                      className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-amber-950 px-6 py-3 rounded-full font-bold transition-colors group-hover:gap-3 duration-300"
-                      style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-                    >
-                      Explore Concept
-                      <ArrowLeft size={18} className="rotate-180 transition-transform" />
-                    </Link>
-                  </div>
-                </motion.article>
-              ))}
-          </div>
-
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-center mt-8"
-          >
-            <p className="text-amber-300/60 text-sm italic" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              More concepts coming soon...
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Decorative Footer */}
       <footer className="py-16 text-center bg-amber-950/50">
