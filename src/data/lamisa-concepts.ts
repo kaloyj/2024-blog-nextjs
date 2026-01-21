@@ -231,9 +231,9 @@ export const concepts: Record<string, MenuConcept> = {
     heroImageAlt: "brunch concept hero image showcasing Filipino brunch cuisine",
     items: [
       {
-        name: "Crispy Garlic Fried Rice with Tocino and Eggs",
-        description: "Day-old rice transformed into golden, crackling bites inspired by Japanese crispy rice technique - each grain toasted until crunchy, infused with fragrant garlic, and paired with sweet-cured tocino and sunny-side-up eggs that spill their yolk across the dish",
-        story: "Tocino is one of the Philippines' most beloved breakfast meats - pork cured in a sweet mixture of sugar, salt, annatto, and spices, then pan-fried until caramelized and slightly charred at the edges. Traditionally served with garlic fried rice (sinangag) and eggs as 'tosilog', it's a breakfast combination that has fueled countless Filipino mornings. We've elevated this classic by borrowing from Japanese technique - pressing and crisping the fried rice until it develops that satisfying crunch, creating a textural playground where crispy meets sweet meets runny yolk."
+        name: "Crispy Escabeche Fish Sandwich",
+        description: "Golden crispy fried fish fillet nestled in a soft bun, drizzled with tangy-sweet escabeche sauce and topped with a bright salad of pickled ginger, julienned carrots, and colorful bell peppers - a Filipino classic reimagined between bread",
+        story: "Escabeche is a beloved Filipino dish with Spanish colonial roots - whole fried fish smothered in a vibrant sweet and sour sauce made with vinegar, sugar, and aromatics, then crowned with sautéed ginger, carrots, bell peppers, and onions. It's a dish that graces Filipino celebration tables, from fiestas to family reunions, where the crispy fish absorbs the tangy sauce while the vegetables add freshness and crunch. We've transformed this celebratory dish into a handheld sandwich, keeping all the essential flavors - the crispy fish, the sweet-sour sauce, and the ginger-kissed vegetable medley - making it perfect for a brunch that honors tradition while embracing something new."
       },
       {
         name: "Avocado French Toast",

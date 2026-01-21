@@ -10,42 +10,34 @@ import { getAllConceptIds, getConcept, MenuConcept } from "@/data/lamisa-concept
 const menuItems = {
   savoury: [
     {
-      name: "Bao with Humba",
-      description: "Soft, pillowy steamed buns filled with tender braised pork belly in a sweet-savory soy sauce, infused with star anise and fermented black beans"
+      name: "Pandesal with Filipino Omelette",
+      description: "Warm, freshly baked pandesal — the beloved Filipino breakfast bread with its signature breadcrumb crust — split and filled with a classic Filipino omelette studded with fresh tomatoes and green onions"
     },
     {
-      name: "Pan de Sal Breakfast Sandwich",
-      description: "Traditional Filipino bread rolls with perfectly fried egg, crispy bacon, caramelized onions, and creamy avocado (2 pieces)"
+      name: "Garlic Lime Fried Chicken",
+      description: "Crispy buttermilk fried chicken marinated in garlic and brightened with zesty lime, served golden and crunchy with a tangy dipping sauce that cuts through the richness"
     },
     {
-      name: "Baconsilog Burrito",
-      description: "Filipino breakfast wrapped up — fragrant garlic rice, crispy bacon, and sunny-side-up egg in a warm tortilla"
-    },
-    {
-      name: "Tocinosilog Burrito",
-      description: "Sweet cured pork tocino with garlic rice and egg, wrapped in a soft flour tortilla for the perfect handheld breakfast"
-    },
-    {
-      name: "Pancit Canton Frittata",
-      description: "Filipino egg noodles baked with farm-fresh eggs and seasonal vegetables, topped with crispy pork belly and tangy soy-calamansi sauce"
-    },
-    {
-      name: "Tocino Breakfast Tacos",
-      description: "Crispy corn shells filled with sweet Filipino tocino and fluffy scrambled eggs, finished with fresh herbs"
+      name: "Escabeche Fried Fish Sandwich",
+      description: "Golden crispy fried fish fillet nestled in a soft bun, drizzled with tangy-sweet escabeche sauce and topped with a bright salad of pickled ginger, julienned carrots, and colorful bell peppers — a Filipino fiesta classic reimagined between bread"
     }
   ],
   sweet: [
     {
       name: "Turon French Toast",
-      description: "Classic French toast reimagined with caramelized bananas and sweet jackfruit, crowned with vanilla ice cream and a drizzle of condensed milk"
+      description: "French toast reimagined with turon ingredients — ripe caramelized banana and sweet jackfruit — served with a luxurious whipped maple mascarpone cream"
     },
     {
-      name: "Buko Pandan Waffles",
-      description: "Aromatic pandan-infused waffles topped with coconut cream, toasted coconut shreds, and a generous pour of condensed milk, garnished with fresh pandan leaves"
+      name: "Avocado French Toast",
+      description: "Classic golden French toast crowned with silky whipped avocado cream and topped with brûléed avocado slices — a tribute to the Filipino tradition of enjoying avocado as a sweet dessert"
     },
     {
-      name: "Halo-Halo Smoothie Bowl",
-      description: "The iconic Filipino dessert transformed — a vibrant purple yam smoothie base topped with sweet beans, jellies, fresh fruit, leche flan, and crunchy pinipig"
+      name: "Ube Pancakes",
+      description: "Fluffy violet-hued pancakes infused with real ube, stacked high and crowned with a cloud of ube maple whipped cream — a celebration of Filipino purple yam in the most indulgent way"
+    },
+    {
+      name: "Champorado",
+      description: "Creamy rice cooked with rich cocoa, sweetened with evaporated milk, and balanced with salty cured bacon — the beloved Filipino chocolate rice porridge that has warmed countless mornings"
     }
   ],
   drinks: [
@@ -58,20 +50,8 @@ const menuItems = {
       description: null
     },
     {
-      name: "Tea Selection",
-      description: "Classic loose-leaf teas — English Breakfast, Earl Grey, Chamomile, and Jasmine Green Tea, served hot or iced"
-    },
-    {
       name: "Orange Juice",
       description: null
-    },
-    {
-      name: "Calamansi Juice",
-      description: "Refreshing Filipino citrus juice made from fresh calamansi limes, perfectly balanced between tart and sweet, served ice-cold"
-    },
-    {
-      name: "Sikwati",
-      description: "Traditional Filipino hot chocolate made from tablea (pure cacao tablets), rich and velvety with deep chocolate flavor, served warm and comforting"
     }
   ]
 };
