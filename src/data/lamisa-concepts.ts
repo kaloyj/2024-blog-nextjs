@@ -223,6 +223,41 @@ export const concepts: Record<string, MenuConcept> = {
   },
   "004": {
     id: "004",
+    title: "Community",
+    subtitle: "together in hard times and happier ones",
+    theme: "gathering the office community over coffee and brunch",
+    cuisine: "Filipino brunch",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1768299446/80104D71-91AC-490B-B213-D5CA1C99B3BA_m93j9a.jpg",
+    heroImageAlt: "brunch concept hero image showcasing Filipino brunch cuisine",
+    date: "February 17, 2026",
+    items: [
+      {
+        name: "Filipino Chicken Sandwich",
+        description: "Crispy buttermilk fried chicken kissed with Filipino spices and a hint of calamansi heat, nestled in a toasted brioche bun with tangy coleslaw and house-made pickles that cut through the richness with every bite",
+        story: "The fried chicken sandwich has become a brunch staple around the world, but we wanted to bring it home. By infusing the marinade with Filipino aromatics and finishing with a calamansi-spiked aioli, this sandwich becomes a love letter to Filipino flavors wrapped in familiar comfort."
+      },
+      {
+        name: "Kimchi Fried Chicken Sandwich",
+        description: "Crispy fried chicken coated in a tangy gochujang lime mayo sauce, served on a soft bun with kimchi coleslaw",
+        story: "Your famous brunch classic, but with a Korean twist. Kimchi is a beloved Korean side dish, made from fermented cabbage, and it's a perfect complement to the crispy fried chicken. We've taken this beloved flavor and transformed it into a sandwich, keeping all the essential flavors - the crispy chicken, the tangy kimchi sauce, and the crunchy pickled vegetables - making it perfect for a brunch that honors tradition while embracing something new."
+      },
+      {
+        name: "Turon French Toast",
+        description: "French toast reimagined with turon ingredients - ripe banana and jackfruit - served with a luxurious whipped maple mascarpone cream",
+        story: "Turon is a popular Filipino street food - banana and jackfruit wrapped in spring roll wrapper and fried. We've taken these beloved flavors and transformed them into a decadent French toast, bridging Filipino street food culture with brunch sophistication."
+      },
+      {
+        name: "Americano",
+        description: "Smooth, balanced americano for those who prefer a longer coffee experience"
+      },
+      {
+        name: "Orange Juice",
+        description: "Fresh, vibrant orange juice to complement your brunch experience"
+      }
+    ]
+  },
+  "005": {
+    id: "005",
     title: "Provenza",
     subtitle: "my old flat in Barcelona, an ode to roommates and shared journeys",
     theme: "experimenting with flavors from home with the people who have made new spaces less lonely",
