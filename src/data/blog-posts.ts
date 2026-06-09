@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "reigniting-the-love-for-code",
+    title: "Reigniting the Love for Code",
+    excerpt: "finding the fire amidst the AI fatigue and burnout",
+    date: "2026-06-09",
+    readTime: "5 min read",
+    category: "Tech",
+    featured: false,
+    image: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1200,h_630,g_auto:0.3,q_auto,f_auto/v1781011727/airport_jhb7ek.png",
+    imageAlt: "A dreamy landscape representing new beginnings and aspirations"
+  },
+  {
     slug: "the-beginning-of-a-dream",
     title: "The Beginning of a Dream",
     excerpt: "How at 27, the resurgence of simply having dreams, and the idea of pursuing it is shaping up to reality.",

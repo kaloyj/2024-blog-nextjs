@@ -13,6 +13,11 @@ interface BlogPostClientProps {
 }
 
 export default function BlogPostClient({ post, content, allPosts }: BlogPostClientProps) {
+  const isTechPost = post.category.toLowerCase() === "tech";
+  const techMonoClass = isTechPost
+    ? "[font-family:var(--font-jetbrains-mono),ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation_Mono,Courier_New,monospace]"
+    : "";
+
   return (
     <div className="min-h-screen bg-dark-950">
       {/* Article Header */}
@@ -25,13 +30,13 @@ export default function BlogPostClient({ post, content, allPosts }: BlogPostClie
         >
           <Link 
             href="/blog" 
-            className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 mb-8 transition-colors"
+            className={`inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 mb-8 transition-colors ${techMonoClass}`}
           >
             <ArrowLeft size={20} />
             Back to Blog
           </Link>
           
-          <div className="flex items-center gap-4 mb-6">
+          <div className={`flex items-center gap-4 mb-6 ${techMonoClass}`}>
             <span className="bg-primary-900 text-primary-300 px-3 py-1 rounded-full text-sm font-medium">
               {post.category}
             </span>
@@ -42,11 +47,11 @@ export default function BlogPostClient({ post, content, allPosts }: BlogPostClie
             )}
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h1 className={`text-4xl md:text-5xl font-bold text-white mb-6 leading-tight ${techMonoClass}`}>
             {post.title}
           </h1>
           
-          <p className="text-xl text-dark-300 mb-8 leading-loose">
+          <p className={`text-xl text-dark-300 mb-8 leading-loose ${techMonoClass}`}>
             {post.excerpt}
           </p>
           
@@ -64,7 +69,7 @@ export default function BlogPostClient({ post, content, allPosts }: BlogPostClie
             </div>
           </div>
           
-          <div className="flex items-center gap-6 text-dark-400">
+          <div className={`flex items-center gap-6 text-dark-400 ${techMonoClass}`}>
             <div className="flex items-center gap-2">
               <Calendar size={16} />
               {new Date(post.date).toLocaleDateString('en-US', { 
@@ -85,7 +90,7 @@ export default function BlogPostClient({ post, content, allPosts }: BlogPostClie
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="prose prose-invert prose-lg max-w-none"
+          className={`prose prose-invert prose-lg max-w-none ${techMonoClass}`}
           style={{
             '--tw-prose-body': '#cbd5e1',
             '--tw-prose-headings': '#ffffff',
