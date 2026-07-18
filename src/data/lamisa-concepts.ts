@@ -258,35 +258,47 @@ export const concepts: Record<string, MenuConcept> = {
   },
   "005": {
     id: "005",
-    title: "Provenza",
-    subtitle: "my old flat in Barcelona, an ode to roommates and shared journeys",
-    theme: "experimenting with flavors from home with the people who have made new spaces less lonely",
-    cuisine: "Filipino brunch",
-    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/v1768299446/80104D71-91AC-490B-B213-D5CA1C99B3BA_m93j9a.jpg",
-    heroImageAlt: "brunch concept hero image showcasing Filipino brunch cuisine",
+    title: "Huyuhoy",
+    subtitle: "like summer breezes, how friends lighten the harder seasons in life",
+    theme: "tropical fruits tucked into unexpected dishes",
+    cuisine: "Lamisa dinner",
+    date: "July 24, 2026",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1784389013/IMG_6768_shjcx2.heic",
+    heroImageAlt: "Huyuhoy concept hero image showcasing a tropical Lamisa dinner spread",
     items: [
       {
-        name: "Crispy Escabeche Fish Sandwich",
-        description: "Golden crispy fried fish fillet nestled in a soft bun, drizzled with tangy-sweet escabeche sauce and topped with a bright salad of pickled ginger, julienned carrots, and colorful bell peppers - a Filipino classic reimagined between bread",
-        story: "Escabeche is a beloved Filipino dish with Spanish colonial roots - whole fried fish smothered in a vibrant sweet and sour sauce made with vinegar, sugar, and aromatics, then crowned with sautéed ginger, carrots, bell peppers, and onions. It's a dish that graces Filipino celebration tables, from fiestas to family reunions, where the crispy fish absorbs the tangy sauce while the vegetables add freshness and crunch. We've transformed this celebratory dish into a handheld sandwich, keeping all the essential flavors - the crispy fish, the sweet-sour sauce, and the ginger-kissed vegetable medley - making it perfect for a brunch that honors tradition while embracing something new."
+        name: "Gazpacho with Pear",
+        description: "Chilled Spanish gazpacho brightened with ripe pear — a silky, refreshing opener where Mediterranean cool meets tropical sweetness",
+        story: "Huyuhoy is the breeze that makes a Filipino summer bearable. This dish captures that same relief — cold, bright, and unexpectedly sweet. Pear softens the tomato's acidity and turns a classic gazpacho into something that feels like shade on a hot afternoon."
       },
       {
-        name: "Avocado French Toast",
-        description: "Classic golden French toast crowned with silky whipped avocado cream and topped with brûléed avocado slices - the crackling caramelized sugar giving way to cool, creamy fruit beneath, a tribute to the Filipino avocado dessert tradition",
-        story: "In the Philippines, avocado is celebrated as a dessert, not a savory ingredient. Mashed with condensed milk or sugar, it becomes 'avocado shake' - a sweet, creamy treat found in every Filipino household and streetside stall. This dish honors that tradition, transforming our beloved Turon French Toast concept with avocado taking center stage. The whipped avocado cream brings that familiar Filipino sweetness, while the brûléed topping adds a sophisticated caramelized crunch that bridges two worlds - Filipino merienda and European brunch elegance."
+        name: "Hummus with Edamame and Sesame",
+        description: "Creamy hummus blended with edamame and finished with toasted sesame — earthy, nutty, and made for scooping and sharing around the table",
+        story: "Not every dish here needs mango to feel tropical. Edamame brings a green, grassy sweetness that pairs beautifully with sesame's warmth — a dip that invites everyone to lean in, break bread, and stay a little longer."
       },
       {
-        name: "Champorado (Arroz con Leche) - Filipino Breakfast Style",
-        description: "Creamy rice cooked with rich cocoa, sweetened with evaporated milk, and balanced with salty cured bacon to cut through the richness, creating a balance of sweet and salty flavors in your breakfast bowl",
-        story: "Arroz con leche, Spain's comforting rice pudding, meets champorado, the Filipino chocolate rice porridge that has warmed countless mornings. This fusion honors both traditions - the Spanish elegance of arroz con leche with the bold, comforting flavors of Filipino champorado, finished with salty cured bacon that btings flavor to every spoonful."
+        name: "Kinilaw with Mango",
+        description: "Filipino ceviche — fresh fish cured in vinegar and citrus — elevated with ripe mango that adds a burst of tropical sweetness against the sharp, bright acidity",
+        story: "Kinilaw is the dish Filipinos reach for when the heat is unbearable — raw, clean, and electric with vinegar and calamansi. Adding mango is a small rebellion and a big reward: the sweetness doesn't tame the acidity, it dances with it, the way good friends make hard seasons easier to swallow."
       },
       {
-        name: "Americano",
-        description: "Smooth, balanced americano for those who prefer a longer coffee experience"
+        name: "Ensaladang Talong with Mango",
+        description: "Smoky grilled eggplant salad tossed with tomatoes, onions, and herbs, crowned with sweet mango that cuts through the char and brings everything into balance",
+        story: "Ensaladang talong is humble home cooking — eggplant grilled until silky, dressed simply, eaten with rice and your hands if no one's looking. The mango here is the huyuhoy: a cooling counterpoint to the smoke, turning a familiar side dish into something that feels new and celebratory."
       },
       {
-        name: "Orange Juice",
-        description: "Fresh, vibrant orange juice to complement your brunch experience"
+        name: "Filipino Fried Chicken with Dried Limes",
+        description: "Crispy Filipino-style fried chicken with a shatteringly golden crust, finished with dried lime that adds a fragrant, tangy lift to every crunchy bite",
+        story: "Fried chicken is the dish that brings people to the table no matter what. Here, dried lime adds a citrus perfume that cuts through the richness — sharp and aromatic, like the friend who shows up exactly when you need them and somehow makes everything lighter."
+      },
+      {
+        name: "Mangobaay",
+        description: "A Filipino mango mint cocktail — ripe mango blended with fresh mint and a touch of sparkle, sweet, cooling, and impossibly drinkable on a warm evening",
+        story: "Built around ripe Filipino mango and fresh mint, this cocktail is sweet, cooling, and impossibly drinkable on a warm evening — for the friends who've been through the hard parts and still know how to laugh until the glasses are empty."
+      },
+      {
+        name: "Wine",
+        description: "A carefully selected wine to complement the tropical flavors of the evening and keep the table talking long after the plates are cleared"
       }
     ]
   }
