@@ -265,6 +265,16 @@ export const concepts: Record<string, MenuConcept> = {
     date: "July 24, 2026",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1784389013/IMG_6768_shjcx2.heic",
     heroImageAlt: "Huyuhoy concept hero image showcasing a tropical Lamisa dinner spread",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226256/754824223_2239061560199338_10516654598091405_n_ycruib.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226256/756524073_1433227318834907_3106555175855274142_n_dnffx2.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226255/754247930_1566871671556537_1491292756988950283_n_yvbq0t.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226255/757076453_3623475221140639_8309225770925014244_n_oo5uzy.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226255/757236074_1777661889892256_1032596966739288561_n_ndofqe.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226255/756219209_1752403975955502_3058316886517171469_n_ub8qhi.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226255/754871777_38423456747245076_163867280750259217_n_u9jdkc.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1785226255/756609605_1078333151629206_2287025724670505888_n_lv4m9b.jpg"
+    ],
     items: [
       {
         name: "Gazpacho with Pear",
