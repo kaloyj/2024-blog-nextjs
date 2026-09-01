@@ -6,61 +6,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { getAllConceptIds, getConcept, MenuConcept } from "@/data/lamisa-concepts";
-
-const menuItems = {
-  savoury: [
-    {
-      name: "Pandesal with Filipino Omelette",
-      description: "Warm, freshly baked pandesal — the beloved Filipino breakfast bread with its signature breadcrumb crust — split and filled with a classic Filipino omelette studded with fresh tomatoes and green onions"
-    },
-    {
-      name: "Garlic Lime Fried Chicken",
-      description: "Crispy buttermilk fried chicken marinated in garlic and brightened with zesty lime, served golden and crunchy with a tangy dipping sauce that cuts through the richness"
-    },
-    {
-      name: "Escabeche Fried Fish Sandwich",
-      description: "Golden crispy fried fish fillet nestled in a soft bun, drizzled with tangy-sweet escabeche sauce and topped with a bright salad of pickled ginger, julienned carrots, and colorful bell peppers — a Filipino fiesta classic reimagined between bread"
-    }
-  ],
-  sweet: [
-    {
-      name: "Turon French Toast",
-      description: "French toast reimagined with turon ingredients — ripe caramelized banana and sweet jackfruit — served with a luxurious whipped maple mascarpone cream"
-    },
-    {
-      name: "Avocado French Toast",
-      description: "Classic golden French toast crowned with silky whipped avocado cream and topped with brûléed avocado slices — a tribute to the Filipino tradition of enjoying avocado as a sweet dessert"
-    },
-    {
-      name: "Ube Pancakes",
-      description: "Fluffy violet-hued pancakes infused with real ube, stacked high and crowned with a cloud of ube maple whipped cream — a celebration of Filipino purple yam in the most indulgent way"
-    },
-    {
-      name: "Champorado",
-      description: "Creamy rice cooked with rich cocoa, sweetened with evaporated milk, and balanced with salty cured bacon — the beloved Filipino chocolate rice porridge that has warmed countless mornings"
-    }
-  ],
-  drinks: [
-    {
-      name: "Espresso",
-      description: null
-    },
-    {
-      name: "Americano",
-      description: null
-    },
-    {
-      name: "Orange Juice",
-      description: null
-    }
-  ]
-};
+import { getAllPopupIds, getPopup, Popup } from "@/data/lamisa-popups";
 
 export default function LamisaMenu() {
   const concepts = getAllConceptIds()
     .sort((a, b) => parseInt(b) - parseInt(a))
     .map((conceptId) => getConcept(conceptId))
     .filter((concept): concept is MenuConcept => concept !== undefined);
+
+  const popups = getAllPopupIds()
+    .sort((a, b) => parseInt(b) - parseInt(a))
+    .map((popupId) => getPopup(popupId))
+    .filter((popup): popup is Popup => popup !== undefined);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -160,22 +117,11 @@ export default function LamisaMenu() {
                           transition={{ duration: 0.6, delay: 0.2 }}
                           className="max-w-3xl"
                         >
-                          {/* Badges */}
-                          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-4">
-                            <span className="bg-amber-800/60 backdrop-blur-sm text-amber-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                              CONCEPT {concept.id}
-                            </span>
-                            {index === 0 && (
-                              <span className="bg-orange-700/60 backdrop-blur-sm text-orange-200 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                                Latest
-                              </span>
-                            )}
-                            {concept.date && (
-                              <span className="bg-amber-700/60 backdrop-blur-sm text-amber-200 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                                {concept.date}
-                              </span>
-                            )}
-                          </div>
+                          {concept.date && (
+                            <p className="text-amber-200/80 text-sm tracking-widest uppercase mb-4 drop-shadow-lg" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                              {concept.date}
+                            </p>
+                          )}
                           
                           {/* Title */}
                           <h3 className="text-5xl md:text-6xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-100 to-orange-100 tracking-tight drop-shadow-2xl" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
@@ -197,14 +143,13 @@ export default function LamisaMenu() {
                             {concept.theme}
                           </p>
                           
-                          {/* CTA Button */}
                           <Link 
                             href={`/lamisa/${concept.id}`}
-                            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-amber-950 px-6 py-3 rounded-full font-bold transition-all duration-300 hover:gap-3 shadow-lg hover:shadow-xl"
+                            className="inline-flex items-center gap-2 text-amber-100 hover:text-white font-semibold tracking-widest uppercase text-sm border-b border-amber-400/70 hover:border-amber-100 pb-0.5 transition-all duration-300 hover:gap-3 drop-shadow-lg group"
                             style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
                           >
                             Explore Concept
-                            <ArrowLeft size={18} className="rotate-180 transition-transform" />
+                            <ArrowLeft size={16} className="rotate-180 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         </motion.div>
                       </div>
@@ -250,141 +195,68 @@ export default function LamisaMenu() {
         </div>
       </section>
 
-      {/* Menu Content */}
-      <main className="max-w-5xl mx-auto px-6 pb-20">
-        {/* Savoury Section */}
-        <motion.section
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-black text-amber-200 mb-3 tracking-tight uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.01em' }}>
-              Savoury
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid gap-8">
-            {menuItems.savoury.map((item) => (
-              <motion.div
-                key={item.name}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="bg-amber-900/30 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-800/40 hover:border-amber-600/60"
+      {/* Events */}
+      {popups.length > 0 && (
+        <section className="border-t border-amber-800/30 pt-12 md:pt-16 pb-12 md:pb-20">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="mb-8 md:mb-10">
+              <h2
+                className="text-3xl md:text-4xl font-black text-amber-200 tracking-tight uppercase"
+                style={{ fontFamily: "system-ui, -apple-system, sans-serif", letterSpacing: "-0.01em" }}
               >
-                <div className="mb-3">
-                  <h3 className="text-2xl font-bold text-amber-100 tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    {item.name}
-                  </h3>
-                </div>
-                <p className="text-amber-200/70 leading-relaxed text-base" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+                Events
+              </h2>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mt-3 rounded-full" />
+            </div>
 
-        {/* Sweet Section */}
-        <motion.section
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-black text-amber-200 mb-3 tracking-tight uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.01em' }}>
-              Sweet
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full"></div>
-          </div>
+            <div className="space-y-4">
+              {popups.map((popup) => (
+                <Link
+                  key={popup.id}
+                  href={`/lamisa/popups/${popup.id}`}
+                  className="flex gap-4 md:gap-6 items-center group"
+                >
+                  {popup.heroImage && (
+                    <div className="relative w-24 h-24 md:w-28 md:h-28 flex-shrink-0 overflow-hidden rounded-lg">
+                      <Image
+                        src={popup.heroImage}
+                        alt={popup.heroImageAlt || `${popup.title} popup`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="112px"
+                      />
+                    </div>
+                  )}
 
-          <div className="grid gap-8">
-            {menuItems.sweet.map((item) => (
-              <motion.div
-                key={item.name}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="bg-amber-900/30 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-800/40 hover:border-amber-600/60"
-              >
-                <div className="mb-3">
-                  <h3 className="text-2xl font-bold text-amber-100 tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    {item.name}
-                  </h3>
-                </div>
-                <p className="text-amber-200/70 leading-relaxed text-base" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
+                  <div className="flex-1 min-w-0">
+                    {popup.date && (
+                      <p
+                        className="text-amber-300/50 text-xs tracking-widest uppercase mb-1"
+                        style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                      >
+                        {popup.date}
+                      </p>
+                    )}
+                    <h3
+                      className="text-amber-100 text-lg md:text-xl font-medium group-hover:text-white transition-colors"
+                      style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    >
+                      {popup.title}
+                    </h3>
+                    <p
+                      className="text-amber-300/60 text-sm mt-0.5"
+                      style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    >
+                      {popup.subtitle}
+                      {popup.address && ` · ${popup.address}`}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </motion.section>
-
-        {/* Drinks Section */}
-        <motion.section
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-black text-amber-200 mb-3 tracking-tight uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.01em' }}>
-              Drinks
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid gap-8">
-            {menuItems.drinks.map((item) => (
-              <motion.div
-                key={item.name}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-                className="bg-stone-800/40 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-stone-700/40 hover:border-stone-500/60"
-              >
-                <div className="mb-3">
-                  <h3 className="text-2xl font-bold text-stone-200 tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    {item.name}
-                  </h3>
-                </div>
-                {item.description && (
-                  <p className="text-stone-300/80 leading-relaxed text-base" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    {item.description}
-                  </p>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Footer Note */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <div className="bg-stone-800/30 rounded-2xl p-8 border border-stone-700/40">
-            <p className="text-stone-200 text-lg mb-2 font-semibold tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              ✨ All dishes are made with love and authentic Filipino flavors ✨
-            </p>
-            <p className="text-stone-300/70 text-sm tracking-wide" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              A design concept celebrating Filipino brunch culture
-            </p>
-          </div>
-        </motion.div>
-      </main>
+        </section>
+      )}
 
       {/* Decorative Footer */}
       <footer className="py-16 text-center bg-amber-950/50">
