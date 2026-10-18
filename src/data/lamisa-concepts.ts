@@ -311,6 +311,90 @@ export const concepts: Record<string, MenuConcept> = {
         description: "A carefully selected wine to complement the tropical flavors of the evening and keep the table talking long after the plates are cleared"
       }
     ]
+  },
+  "006": {
+    id: "006",
+    title: "Family",
+    subtitle: "the bonds that hold us together",
+    theme: "a filipino and middle eastern fusion",
+    cuisine: "Lamisa dinner",
+    date: "September 8, 2026",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1785226255/757236074_1777661889892256_1032596966739288561_n_ndofqe.jpg",
+    heroImageAlt: "Family concept hero image showcasing a Lamisa dinner gathered around the table",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345225/IMG_0725_jho2xy.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345223/IMG_0750_isjc0m.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345221/IMG_0679_v68wgs.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345224/IMG_0720_o9uq4k.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345220/IMG_0730_ecro4d.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345214/IMG_1578_mzlhkq.jpg",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345220/IMG_0687_a6txp0.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792345220/IMG_0731_zz9xit.heic"
+    ],
+    items: [
+      {
+        name: "Kinilaw with Mango",
+        description: "Our all-time classic Filipino ceviche — fresh fish cured in punchy coconut vinegar, brightened with ripe mangoes that add a burst of tropical sweetness against the sharp acidity",
+        story: "Some dishes become family simply by showing up again and again. This kinilaw is that classic — coconut vinegar for the bite, mango for the soft landing — the kind of opener that tastes like home no matter whose table you're at."
+      },
+      {
+        name: "Tomato Salad",
+        description: "A bright tomato salad — juicy, herbaceous, and simply dressed — the fresh counterpoint that keeps the table light alongside the richer plates",
+        story: "Not every dish needs to compete for attention. This tomato salad is the quiet one at the table — clean, colorful, and always welcome next to kinilaw and fried chicken alike."
+      },
+      {
+        name: "Quinoa Salad with Feta, Parmesan, and Pickled Pomegranates",
+        description: "A new favorite — fluffy quinoa tossed with creamy feta, shaved parmesan, and pickled pomegranates that pop with sweet-tart brightness in every forkful",
+        story: "Family grows when something new earns a seat at the table. This salad borrows Middle Eastern brightness — feta, pomegranate, a little sharpness — and settles in beside Filipino flavors like it always belonged there."
+      },
+      {
+        name: "Jamón Brie Canapés with Fig and Strawberry Marmalade",
+        description: "A comeback recipe — delicate canapés layered with salty jamón, creamy brie, and a sweet fig and strawberry marmalade that ties salt and fruit together in one bite",
+        story: "Some recipes leave and come back stronger — like relatives who return for the holidays. Jamón and brie meet fig and strawberry marmalade in a canapé that feels familiar and celebratory at once, a small reminder that good things deserve a second life at the table."
+      },
+      {
+        name: "Lamisa Fried Chicken with Lime",
+        description: "The go-to staple — crispy Lamisa fried chicken with a shatteringly golden crust, finished with lime that cuts through the richness and keeps every bite bright",
+        story: "Every family has a dish that never needs explaining. This is ours — fried chicken that brings people to the table, lime that keeps it lively, and a plate that always feels like the center of the night."
+      },
+      {
+        name: "Rose Granita with Date Caramel and Candied Pomegranates",
+        description: "A new recipe we've been trying out — icy rose granita layered with sticky date caramel and candied pomegranates for a cool, fragrant, sweetly spiced finish",
+        story: "Dessert is where Filipino warmth and Middle Eastern perfume meet most clearly — floral rose, deep date caramel, jewel-like pomegranate. A closing course that feels like two kitchens talking across the table, held together by something sweet."
+      }
+    ]
+  },
+  "007": {
+    id: "007",
+    title: "Milk",
+    subtitle: "testing the flexibility of milk in filipino food",
+    theme: "filipino food built around milk, from first bite to last",
+    cuisine: "Lamisa dinner",
+    date: "October 23, 2026",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1785226255/754871777_38423456747245076_163867280750259217_n_u9jdkc.jpg",
+    heroImageAlt: "Milk concept hero image showcasing Filipino buttermilk fried chicken",
+    items: [
+      {
+        name: "Kinilaw with Coconut Milk Dressing",
+        description: "Filipino ceviche — fresh fish cured in vinegar and citrus — finished with a silky coconut milk dressing that softens the acidity and brings a gentle, tropical creaminess to every bite",
+        story: "Kinilaw is usually sharp and electric — all vinegar, citrus, and heat. Here, coconut milk is the quiet guest that changes the mood: it rounds the edges without muting the brightness, the way milk softens a strong coffee. A coastal classic, rewritten through the lens of cream."
+      },
+      {
+        name: "Brioche Anchovy Toasties with Sour Cream and Lemon",
+        description: "Golden brioche toasties topped with salty anchovy, cool sour cream, and a bright squeeze of lemon — rich, punchy, and made for sharing before the main course arrives",
+        story: "Sour cream is milk's tangy cousin — cultured, cool, and built for contrast. Paired with briny anchovy and buttery brioche, it turns a simple toastie into something that feels indulgent and sharp at once, priming the palate for everything still to come."
+      },
+      {
+        name: "Filipino Buttermilk Fried Chicken with Quinoa Salad",
+        description: "Crispy Filipino-style fried chicken marinated in buttermilk for a tender, shatteringly golden crust, paired with a bright quinoa salad that cuts through the richness with every forkful",
+        story: "Buttermilk is the secret behind great fried chicken — it tenderizes, flavors, and builds that unmistakable crust. This plate is the heart of the evening: milk working overtime in the marinade, then balanced by a fresh quinoa salad so the richness never weighs the table down."
+      },
+      {
+        name: "Filipino Leche Flan",
+        description: "Silky Filipino leche flan — eggs and condensed milk baked into a custard so smooth it trembles, crowned with a deep amber caramel that pools around each spoonful",
+        story: "Leche flan is milk at its most celebratory — condensed milk and egg yolks transformed into the dessert every Filipino fiesta ends with. Creamy, caramel-kissed, and quietly luxurious, it's the natural closing note for a dinner that began and ended with milk."
+      }
+    ]
   }
 };
 
