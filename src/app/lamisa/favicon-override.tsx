@@ -12,7 +12,7 @@ export default function FaviconOverride() {
     const link = document.createElement("link");
     link.rel = "icon";
     link.type = "image/png";
-    link.sizes = "32x32";
+    link.setAttribute("sizes", "32x32");
     link.href = "/lamisa/icon?v=lamisa-950";
     document.head.appendChild(link);
   }, []);
