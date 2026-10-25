@@ -7,6 +7,7 @@ import { ArrowLeft, Instagram } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MenuConcept } from "@/data/lamisa-concepts";
+import LamisaHeader from "../lamisa-header";
 
 interface ConceptClientProps {
   concept: MenuConcept;
@@ -53,9 +54,11 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
         </motion.div>
       )}
 
+      <LamisaHeader />
+
       {/* Hero Section with Image and Content */}
       {concept.heroImage && (
-        <section className="relative md:px-6 md:pt-12 pb-12 md:pb-16">
+        <section className="relative md:px-6 md:pt-4 pb-12 md:pb-16">
           <div className="md:max-w-6xl md:mx-auto">
             {/* Hero Card */}
             <motion.div
@@ -132,58 +135,15 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
         </section>
       )}
 
-      {/* Menu Label */}
-      <motion.div
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="flex items-center justify-center gap-4 text-amber-300 mb-12"
-      >
-        <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400/50"></div>
-        <p className="text-sm uppercase tracking-widest font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Menu</p>
-        <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/50"></div>
-      </motion.div>
-
-      {/* Menu Items */}
-      <main className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="grid gap-8">
-          {concept.items.map((item, index) => (
-            <motion.div
-              key={item.name}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-amber-900/30 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-800/40 hover:border-amber-600/60"
-            >
-              <div className="mb-4">
-                <h3 className="text-3xl font-bold text-amber-100 tracking-wide mb-3" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {item.name}
-                </h3>
-                <p className="text-amber-200/70 leading-relaxed text-lg mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                  {item.description}
-                </p>
-              </div>
-              
-              {item.story && (
-                <div className="pl-4 border-l-2 border-amber-600/50">
-                  <p className="text-amber-300/60 text-sm italic leading-relaxed" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                    {item.story}
-                  </p>
-                </div>
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Gallery Section */}
-        {concept.galleryImages && concept.galleryImages.length > 0 && (
+      {/* Gallery Section */}
+      {concept.galleryImages && concept.galleryImages.length > 0 && (
+        <div className="max-w-5xl mx-auto px-6 mb-16">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mt-20 -mx-6 md:mx-0"
+            className="-mx-6 md:mx-0"
           >
             <div className="text-center mb-8 px-6 md:px-0">
               <h2 className="text-2xl font-bold text-amber-200 mb-2" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
@@ -268,9 +228,52 @@ export default function ConceptClient({ concept }: ConceptClientProps) {
             )}
             </div>
           </motion.div>
-        )}
+        </div>
+      )}
 
+      {/* Menu Label */}
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex items-center justify-center gap-4 text-amber-300 mb-12"
+      >
+        <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400/50"></div>
+        <p className="text-sm uppercase tracking-widest font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Menu</p>
+        <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/50"></div>
+      </motion.div>
 
+      {/* Menu Items */}
+      <main className="max-w-5xl mx-auto px-6 pb-20">
+        <div className="grid gap-8">
+          {concept.items.map((item, index) => (
+            <motion.div
+              key={item.name}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-amber-900/30 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-800/40 hover:border-amber-600/60"
+            >
+              <div className="mb-4">
+                <h3 className="text-3xl font-bold text-amber-100 tracking-wide mb-3" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  {item.name}
+                </h3>
+                <p className="text-amber-200/70 leading-relaxed text-lg mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  {item.description}
+                </p>
+              </div>
+              
+              {item.story && (
+                <div className="pl-4 border-l-2 border-amber-600/50">
+                  <p className="text-amber-300/60 text-sm italic leading-relaxed" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    {item.story}
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </main>
 
       {/* Decorative Footer */}

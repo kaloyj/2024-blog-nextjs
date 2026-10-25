@@ -373,6 +373,16 @@ export const concepts: Record<string, MenuConcept> = {
     date: "October 23, 2026",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1785226255/754871777_38423456747245076_163867280750259217_n_u9jdkc.jpg",
     heroImageAlt: "Milk concept hero image showcasing Filipino buttermilk fried chicken",
+    galleryImages: [
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951686/IMG_3922_tqgtqo.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951687/IMG_3967_z9cmv2.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951687/IMG_4030_ftilbq.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951687/IMG_3952_bvze2v.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951687/IMG_4006_zloyle.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951686/IMG_4048_hpyhez.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951687/IMG_4055_yduhik.heic",
+      "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/v1792951685/IMG_4043_lsgowa.heic"
+    ],
     items: [
       {
         name: "Kinilaw with Coconut Milk Dressing",
@@ -393,6 +403,47 @@ export const concepts: Record<string, MenuConcept> = {
         name: "Filipino Leche Flan",
         description: "Silky Filipino leche flan — eggs and condensed milk baked into a custard so smooth it trembles, crowned with a deep amber caramel that pools around each spoonful",
         story: "Leche flan is milk at its most celebratory — condensed milk and egg yolks transformed into the dessert every Filipino fiesta ends with. Creamy, caramel-kissed, and quietly luxurious, it's the natural closing note for a dinner that began and ended with milk."
+      }
+    ]
+  },
+  "008": {
+    id: "008",
+    title: "Squash",
+    subtitle: "squash, from the first fritter to the last slice of cake",
+    theme: "comfort classics rewritten with squash at every turn",
+    cuisine: "Lamisa dinner",
+    date: "TBD",
+    heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1792951686/IMG_3922_tqgtqo.heic",
+    heroImageAlt: "Squash concept hero image showcasing a Lamisa thanksgiving dinner",
+    items: [
+      {
+        name: "Okoy with Spiced Vinegar",
+        description: "Filipino fried vegetable fritters — crisp, golden, and shatteringly crunchy — served with a punchy spiced vinegar for dipping",
+        story: "Okoy is street-food comfort that belongs at any gathering. Fried until the edges go thin and crisp, then dunked in spiced vinegar — the sharp, bright bite that opens the table before the richer squash dishes arrive."
+      },
+      {
+        name: "Squash Mac and Cheese",
+        description: "Classic mac and cheese folded with squash puree and a mix of cheeses, finished with toasted pecan and panko for a sweet-savory crunch on top",
+        story: "Mac and cheese is thanksgiving comfort in its purest form. Squash puree slips into the cheese sauce quietly, adding warmth and sweetness, while toasted pecan and panko give every scoop a little crackle — familiar, but unmistakably of the season."
+      },
+      {
+        name: "Homemade Labneh with Honey Saffron and Toasted Pumpkin Seeds",
+        description: "Cool, tangy homemade labneh crowned with honey saffron and toasted pumpkin seeds — creamy, floral, and nutty in every spoonful",
+        story: "Labneh is milk strained until thick and lush — a soft landing between the fried and the stewed. Honey saffron brings a golden perfume, pumpkin seeds the crunch of the season, and suddenly a simple dip feels like celebration."
+      },
+      {
+        name: "Homemade Bread",
+        description: "Warm homemade bread, made for tearing, dipping, and soaking up every last bit of sauce and labneh on the table"
+      },
+      {
+        name: "Ginataang Baka and Calabasa",
+        description: "Filipino beef stew simmered in coconut milk with squash — tender, rich, and gently sweet, the kind of main that fills the room before it fills the plate",
+        story: "Ginataan is coconut milk doing what it does best — wrapping everything in quiet richness. Here, beef and calabasa cook down together until the squash softens into the sauce and the stew tastes like thanksgiving filtered through a Filipino kitchen."
+      },
+      {
+        name: "Pumpkin Pecan Sheet Cake",
+        description: "A soft pumpkin sheet cake studded with toasted pecans — warm spice, gentle sweetness, and the kind of dessert made for slicing and sharing at the end of the table",
+        story: "Sheet cake is thanksgiving dessert without the fuss — one pan, many slices, everyone served. Pumpkin keeps it moist and seasonal, pecans bring the crunch, and the whole thing tastes like the season closing on a sweet note."
       }
     ]
   }

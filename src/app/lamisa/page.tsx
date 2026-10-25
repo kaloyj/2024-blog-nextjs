@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { getAllConceptIds, getConcept, MenuConcept } from "@/data/lamisa-concepts";
 import { getAllPopupIds, getPopup, Popup } from "@/data/lamisa-popups";
+import LamisaHeader from "./lamisa-header";
 
 export default function LamisaMenu() {
   const concepts = getAllConceptIds()
@@ -35,46 +36,7 @@ export default function LamisaMenu() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-950 via-amber-950 to-orange-950">
-      {/* Header */}
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="px-4 md:px-6 pt-8 pb-6"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-4">
-            {/* Left side - Brand */}
-            <motion.div
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h1 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-200 to-orange-200 tracking-tight leading-none" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.02em' }}>
-                LAMISA
-              </h1>
-              <p className="text-amber-300/70 text-xs md:text-sm tracking-widest uppercase mt-1" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                Modern Filipino Brunch
-              </p>
-            </motion.div>
-            
-            {/* Right side - Tagline */}
-            <motion.div
-              initial={{ x: 20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="md:text-right"
-            >
-              <p className="text-amber-300/50 text-xs leading-relaxed max-w-xs" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                <span className="text-amber-300/70">Lamisa</span> — &quot;table&quot; in Cebuano, or <span className="italic">&quot;Lami, sa?&quot;</span> — &quot;Delicious, right?&quot;
-              </p>
-              <p className="text-amber-400/40 text-[10px] uppercase tracking-widest mt-1" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                Barcelona
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.header>
+      <LamisaHeader />
 
       {/* Featured Concepts Carousel */}
       <section className="pt-4 md:pt-8 pb-12 md:pb-20">
