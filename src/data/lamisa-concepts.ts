@@ -412,7 +412,7 @@ export const concepts: Record<string, MenuConcept> = {
     subtitle: "squash, from the first fritter to the last slice of cake",
     theme: "comfort classics rewritten with squash at every turn",
     cuisine: "Lamisa dinner",
-    date: "TBD",
+    date: "November 27, 2027",
     heroImage: "https://res.cloudinary.com/dl4k6vvvc/image/upload/c_fill,w_1400,h_700,g_auto,q_auto,f_auto/v1792951686/IMG_3922_tqgtqo.heic",
     heroImageAlt: "Squash concept hero image showcasing a Lamisa thanksgiving dinner",
     items: [
@@ -422,9 +422,9 @@ export const concepts: Record<string, MenuConcept> = {
         story: "Okoy is street-food comfort that belongs at any gathering. Fried until the edges go thin and crisp, then dunked in spiced vinegar — the sharp, bright bite that opens the table before the richer squash dishes arrive."
       },
       {
-        name: "Squash Mac and Cheese",
-        description: "Classic mac and cheese folded with squash puree and a mix of cheeses, finished with toasted pecan and panko for a sweet-savory crunch on top",
-        story: "Mac and cheese is thanksgiving comfort in its purest form. Squash puree slips into the cheese sauce quietly, adding warmth and sweetness, while toasted pecan and panko give every scoop a little crackle — familiar, but unmistakably of the season."
+        name: "Burrata Salad with Pumpkin Dressing",
+        description: "Creamy burrata with cherry tomatoes and rucola, finished with a silky pumpkin dressing and roasted pumpkin seeds for a sweet-savory crunch",
+        story: "Burrata is richness you can cut with a spoon — cool, soft, and made for sharing. Cherry tomatoes and rucola keep it bright, while pumpkin dressing and roasted seeds pull the whole plate into the season without weighing it down."
       },
       {
         name: "Homemade Labneh with Honey Saffron and Toasted Pumpkin Seeds",
@@ -434,6 +434,10 @@ export const concepts: Record<string, MenuConcept> = {
       {
         name: "Homemade Bread",
         description: "Warm homemade bread, made for tearing, dipping, and soaking up every last bit of sauce and labneh on the table"
+      },
+      {
+        name: "Garlic Rice",
+        description: "Fragrant garlic rice — toasted until golden and aromatic — the simple, essential base for soaking up every spoonful of ginataan"
       },
       {
         name: "Ginataang Baka and Calabasa",
